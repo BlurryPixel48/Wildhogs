@@ -9,15 +9,35 @@
     .top{
         display:flex;
         align-items:center;
-        justify-content:center;
         width:100%;
-        height:80px;
+        height:100px;
         font-size:60px;
         font-weight:900;
         background-color:grey;
     }
+    .image{
+        width:100px;
+        height:100px;
+    }
+    .bar{
+        display:grid;
+        grid-template-columns: repeat(3, 120px);
+        grid-template-rows: repeat(1,30px);
+        width:100%;
+        height:30px;
+        background-color:lightgrey;
+    }
+    .sak{
+        background-color:lightgrey;
+        font-size:20px;
+    }
 </style>
 <body>
-    <div class="top">Wildhogs</div>
+    <div class="top"><div class="image"><img src="logotyp.webp" alt="Wildhog" srcset=""></div> Wildhogs</div>
+    <div class="bar">
+        <div class="sak">Hem</div>
+        <div class="sak">Merch</div>
+        <div class="sak">Kontakta oss</div>
+    </div>
 </body>
 </html>
