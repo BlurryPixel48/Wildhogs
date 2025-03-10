@@ -39,6 +39,16 @@
         height: 100px;
         margin-right: 15px;
     }
+    .image1 {
+        flex: 0 0 100vw; /* Varje bild tar upp 100% av bredden */
+        scroll-snap-align: start; /* Snap till start av bilden */
+    }
+
+    .image1 img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: fill; /* Bilden fyller skärmen genom att sträcka */
+    }
 </style>
 <body>
         <div class="top">
@@ -50,5 +60,6 @@
         <div class="sak">Kontakta oss</div>
     </div>
     Köp vår merch!
+    <div class="image1"><img src="merchsmoker.webp" alt="smoker"></div>
 </body>
 </html>
