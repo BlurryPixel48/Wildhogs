@@ -31,23 +31,28 @@
         margin-right: 15px;
     }
 
-    /* Bild scroll */
+    /* Bildscroll */
     .images {
         width: 100vw;
-        height: 85vh;
-        overflow-x: auto; /* Scroll horisontellt */
+        height: 100vh;
+        overflow-x: auto;
         overflow-y: hidden;
         display: flex;
-        flex-direction: row-reverse; /* Bilderna börjar från höger */
-        align-items: center;
-        gap: 10px; /* Mellanrum mellan bilderna */
+        scroll-snap-type: x mandatory; /* Snap till varje bild */
+        scroll-behavior: smooth;
         background-color: #f5f5f5;
         white-space: nowrap;
     }
 
+    .image1 {
+        flex: 0 0 100vw; /* Varje bild tar upp 100% av bredden */
+        scroll-snap-align: start; /* Snap till start av bilden */
+    }
+
     .image1 img {
+        width: 100vw;
         height: 100vh;
-        width: auto;
+        object-fit: fill; /* Bilden fyller skärmen genom att sträcka */
     }
 
     .bar {
