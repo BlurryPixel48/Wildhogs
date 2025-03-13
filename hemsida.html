@@ -38,7 +38,7 @@
     /* Bildscroll */
     .images {
         width: 100vw;
-        height: 100vh;
+        height: 85vh;
         overflow-x: auto;
         overflow-y: hidden;
         display: flex;
@@ -57,7 +57,7 @@
 
     .image1 img {
         width: 100vw;
-        height: 100vh;
+        height: 85vh;
         object-fit: fill; /* Bilden fyller skärmen genom att sträcka */
     }
 
@@ -73,10 +73,11 @@
     }
 
     .sak {
-        background-color: lightgrey;
-        font-size: 20px;
-        text-align: center;
-        padding: 5px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Removes underline from links */
+    color: black;
     }
 
     .sak:hover {
@@ -101,16 +102,17 @@
     
 
     
-</style>
-<body>
+    </style>
+    <body>
     <div class="top">
-        <div class="image"><img src="logotyp.webp" alt="Wildhog"></div> Wildhogs
+        <div class="image"><img src="/images/logotyp.webp" alt="Wildhog"></div> Wildhogs
     </div>
     <div class="bar">
-        <div class="sak">Hem</div>
-        <div class="sak">Merch</div>
-        <div class="sak">Kontakta oss</div>
+        <a href="hemsida.html" class="sak">Hem</a>
+        <a href="hogmerch.html" class="sak">Merch</a>
+        <a href="hogkontakt.html" class="sak">Kontakta oss</a>
     </div>
+    
     <div class = "slidebutton" >
         <img src="/images/back.png" id="backbtn">
         <div class="images">
