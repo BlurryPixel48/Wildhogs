@@ -4,63 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<style>
-        .top {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 100px;
-        font-size: 80px;
-        font-weight: 900;
-        background-color: grey;
-        padding: 10px;
-        position: relative;
-        z-index: 10;
-    }
-    .bar {
-        display: grid;
-        grid-template-columns: repeat(3, 120px);
-        grid-template-rows: repeat(1, 30px);
-        width: 100%;
-        height: 30px;
-        background-color: lightgrey;
-        position: relative;
-        z-index: 10;
-    }
-    .sak {
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    text-decoration: none; /* Removes underline from links */
-    color: black;
-    }
-    .image img {
-        width: 100px;
-        height: 100px;
-        margin-right: 15px;
-    }
-    .image1 {
-        flex: 0 0 100vw; /* Varje bild tar upp 100% av bredden */
-        scroll-snap-align: start; /* Snap till start av bilden */
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .image1 img {
-        width: 100vw;
-        height: 100vh;
-        object-fit: fill; /* Bilden fyller skärmen genom att sträcka */
-    }
-</style>
+        /* Huvudmenyn högst upp */
+        .top {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            font-size: 80px;
+            font-weight: 900;
+            background-color: grey;
+            padding: 10px;
+            position: fixed; /*  Håller menyn fast högst upp */
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        /* Menyraden under toppmenyn */
+        .bar {
+            display: grid;
+            grid-template-columns: repeat(3, 120px);
+            grid-template-rows: repeat(1, 30px);
+            width: 100%;
+            height: 30px;
+            background-color: lightgrey;
+            position: fixed; /* Gör att den alltid är under top */
+            top: 100px; 
+            left: 0;
+            z-index: 99;
+        }
+
+        
+        body {
+            margin-top: 130px;
+            background-color: antiquewhite;
+        }
+
+        
+        .sak {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none; /* Tar bort understrykning */
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .sak:hover {
+            background-color: darkgrey;
+        }
+
+        /* Logotypen */
+        .image img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Bildsektioner */
+        .image1 {
+            flex: 0 0 100vw;
+            scroll-snap-align: start;
+        }
+
+        .image1 img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: fill;
+        }
+    </style>
+</head>
 <body>
-        <div class="top">
-        <div class="image"><img src="/images/logotyp.webp" alt="Wildhog"></div> Wildhogs
+
+    <!-- Toppmenyn med logotyp -->
+    <div class="top">
+        <div class="image"><img src="/images/logotyp.webp" alt="Wildhog"></div>
+        Wildhogs
     </div>
+
+    <!-- Menyraden -->
     <div class="bar">
         <a href="hemsida.html" class="sak">Hem</a>
         <a href="hogmerch.html" class="sak">Merch</a>
         <a href="hogkontakt.html" class="sak">Kontakta oss</a>
     </div>
-    Köp vår merch!
+
+    <!-- Sidans innehåll -->
+    <h1>Köp vår merch!</h1>
+
     <div class="image1"><img src="/images/merchsmoker.webp" alt="smoker"></div>
     <div class="image1"><img src="/images/pan.webp" alt="pan"></div>
     <div class="image1"><img src="/images/knife.webp" alt="knife"></div>

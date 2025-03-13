@@ -30,10 +30,12 @@
     }
 
     .image img {
-        width: 100px;
-        height: 100px;
-        margin-right: 15px;
-    }
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+}
+
 
     /* Bildscroll */
     .images {
@@ -51,7 +53,7 @@
     }
 
     .image1 {
-        flex: 0 0 100vw; /* Varje bild tar upp 100% av bredden */
+        flex: 0 0 100vw; 
         scroll-snap-align: start; /* Snap till start av bilden */
     }
 
@@ -76,7 +78,7 @@
     display: flex; 
     align-items: center;
     justify-content: center;
-    text-decoration: none; /* Removes underline from links */
+    text-decoration: none; /* länkar syns inte*/
     color: black;
     }
 
@@ -129,7 +131,7 @@
         <img src="/images/next.png" id="nextbtn">
     </div> 
     
-<script>  /* Knappar för att byta bild */
+<script>  
     let scrollContainer = document.querySelector(".images");
     let backBtn = document.getElementById("backbtn");
     let nextBtn = document.getElementById("nextbtn");
