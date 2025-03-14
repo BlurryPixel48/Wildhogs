@@ -11,7 +11,6 @@
             box-sizing: border-box;
         }
 
-        
         .top {
             display: flex;
             align-items: center;
@@ -30,7 +29,6 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
         }
 
-        
         .bar {
             display: grid;
             grid-template-columns: repeat(3, 120px);
@@ -43,14 +41,12 @@
             z-index: 99;
         }
 
-        
         body {
-            margin-top: 130px;
+            margin-top: 180px; 
             background-color: antiquewhite;
             font-family: Arial, sans-serif;
         }
 
-        
         .sak {
             display: flex;
             align-items: center;
@@ -65,7 +61,6 @@
             background-color: darkgrey;
         }
 
-        
         .image img {
             width: 100px;
             height: 100px;
@@ -73,54 +68,104 @@
             display: block;
         }
 
-        
+        .contact-box {
+            width: 500px;
+            background-color: #fff;
+            box-shadow: 0 0 20px 0 #999;
+            margin: 50px auto; 
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form {
+            margin: 35px;
+        }
+
+        .input-field, .textarea-field {
+            width: 100%; 
+            max-width: 400px; 
+            margin-top: 20px;
+            padding: 10px; 
+            border: 1px solid #777;
+            border-radius: 14px;
+            outline: none;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .textarea-field {
+            height: 150px; 
+            resize: none;  
+        }
+
+        .btn {
+            border-radius: 20px;
+            color: #fff;
+            margin-top: 18px; 
+            padding: 10px;
+            background-color: #47c35a;
+            border: none;
+            cursor: pointer;
+        }
+
         .info {
             display: grid;
             grid-template-columns: repeat(1, 60%);
             grid-template-rows: repeat(3, 10vh);
-            gap: 10px;
+            gap: 5px; 
             padding: 20px;
+            margin-top: 100px; 
+            margin-bottom: 50px;
         }
 
         .grej {
             font-size: 30px;
         }
-        .footer{
-            width:100%;
-            height:80px;
-            display:flex;
-            align-items:center;
-            background-color:grey;
-            color:white;
-            font-size:40px;
-            font-family: 'Lobster', cursive; 
-            margin-top:22vh;
+
+        .footer {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            background-color: grey;
+            color: white;
+            font-size: 40px;
+            font-family: 'Lobster', cursive;
+            margin-top: 20px; 
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
-</head>
 <body>
 
-    
+    <div class="contact-box">
+        <form>
+            <input type="text" class="input-field" placeholder="Namn">
+            <input type="email" class="input-field" placeholder="E-post">
+            <input type="text" class="input-field" placeholder="Telefonnummer">
+            <textarea class="textarea-field" placeholder="Meddelande"></textarea>
+            <button type="button" class="btn">Send Message</button>
+        </form>
+    </div>
+
     <div class="top">
-        <div class="image"><img src="/images/logotyp.webp" alt="Wildhog"></div>
+        <div class="image"><img src="/images/logotyp.webp" alt="W"></div>
         Wildhogs
     </div>
 
-    
     <div class="bar">
         <a href="hemsida.html" class="sak">Hem</a>
         <a href="hogmerch.html" class="sak">Merch</a>
         <a href="hogkontakt.html" class="sak">Kontakta oss</a>
     </div>
 
-    
     <div class="info">
         <div class="grej">Adress: Jägargatan 12, 123 45 Vildsvik, Sverige</div>
         <div class="grej">Mobilnummer: +46 70 123 45 67</div>
         <div class="grej">E-post: info@wildhogs.se</div>
     </div>
+
     <div class="footer">Wildhogs</div>
+
 </body>
 </html>

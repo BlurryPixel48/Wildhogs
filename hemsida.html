@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
+        body {
             margin-top: 130px;
             background-color: antiquewhite;
             font-family: Arial, sans-serif;
         }
 
-    .top {
+        .top {
             display: flex;
             align-items: center;
             width: 100%;
@@ -36,41 +35,38 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
         }
 
-    .image img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    display: block;
-}
+        .image img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            display: block;
+        }
 
+        .images {
+            width: 100vw;
+            height: 85vh;
+            overflow-x: auto;
+            overflow-y: hidden;
+            display: flex;
+            scroll-snap-type: x mandatory; 
+            scroll-behavior: smooth;
+            background-color: #f5f5f5;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
 
-    
-    .images {
-        width: 100vw;
-        height: 85vh;
-        overflow-x: auto;
-        overflow-y: hidden;
-        display: flex;
-        scroll-snap-type: x mandatory; 
-        scroll-behavior: smooth;
-        background-color: #f5f5f5;
-        white-space: nowrap;
-        scrollbar-width: none;
-    
-    }
+        .image1 {
+            flex: 0 0 100vw; 
+            scroll-snap-align: start; 
+        }
 
-    .image1 {
-        flex: 0 0 100vw; 
-        scroll-snap-align: start; 
-    }
+        .image1 img {
+            width: 100vw;
+            height: 85vh;
+            object-fit: fill; 
+        }
 
-    .image1 img {
-        width: 100vw;
-        height: 85vh;
-        object-fit: fill; 
-    }
-
-    .bar {
+        .bar {
             display: grid;
             grid-template-columns: repeat(3, 120px);
             height: 30px;
@@ -81,59 +77,59 @@
             left: 0;
             z-index: 99;
         }
-    .sak {
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    text-decoration: none; 
-    color: black;
-    }
 
-    .sak:hover {
-        background-color: darkgrey;
-    }
-    
+        .sak {
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            text-decoration: none; 
+            color: black;
+            font-weight: bold; 
+        }
 
-    .slidebutton{
-        display: flex;
-        align-items: center;
-        justify-content: center;    
-    }
+        .sak:hover {
+            background-color: darkgrey;
+        }
 
-    #backbtn, #nextbtn{
-        width: 50px;
-        cursor: pointer;
-        margin: 40px;
-        filter:grayscale(0);
-        transform: scale(1.1);
-    }
-    .footer{
-            width:100%;
-            height:80px;
-            display:flex;
-            align-items:center;
-            background-color:grey;
-            color:white;
-            font-size:40px;
+        .slidebutton {
+            display: flex;
+            align-items: center;
+            justify-content: center;    
+        }
+
+        #backbtn, #nextbtn {
+            width: 50px;
+            cursor: pointer;
+            margin: 40px;
+            filter:grayscale(0);
+            transform: scale(1.1);
+        }
+
+        .footer {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            background-color: grey;
+            color: white;
+            font-size: 40px;
             font-family: 'Lobster', cursive; 
         }
-    
-
-    
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
-    <body>
+<body>
     <div class="top">
-        <div class="image"><img src="/images/logotyp.webp" alt="Wildhog"></div> Wildhogs
+        <div class="image"><img src="/images/logotyp.webp" alt=""></div> Wildhogs
     </div>
+
     <div class="bar">
         <a href="hemsida.html" class="sak">Hem</a>
         <a href="hogmerch.html" class="sak">Merch</a>
         <a href="hogkontakt.html" class="sak">Kontakta oss</a>
     </div>
     
-    <div class = "slidebutton" >
+    <div class="slidebutton">
         <img src="/images/back.png" id="backbtn">
         <div class="images">
             <div class="image1"><img src="/images/hq.webp" alt="Wildhog"></div>
@@ -148,31 +144,28 @@
         </div>  
         <img src="/images/next.png" id="nextbtn">
     </div> 
+
     <div class="footer">Wildhogs</div>
-    
-<script>  
-    let scrollContainer = document.querySelector(".images");
-    let backBtn = document.getElementById("backbtn");
-    let nextBtn = document.getElementById("nextbtn");
 
-    scrollContainer.addEventListener("wheel", (evt) => {
-        evt.preventDefault();
-        scrollContainer.scrollLeft -= evt.deltaY;
+    <script>  
+        let scrollContainer = document.querySelector(".images");
+        let backBtn = document.getElementById("backbtn");
+        let nextBtn = document.getElementById("nextbtn");
 
-    });
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft -= evt.deltaY;
+        });
 
-    nextBtn.addEventListener("click", ()=>{
-        scrollContainer.style.scrollBehavior = "smooth";
-        scrollContainer.scrollLeft += window.innerWidth;
-    });
-    backBtn.addEventListener("click", ()=>{
-        scrollContainer.style.scrollBehavior = "smooth";
-        scrollContainer.scrollLeft -= window.innerWidth;
-    });
+        nextBtn.addEventListener("click", ()=>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft += window.innerWidth;
+        });
 
-
-</script>
-    
-   
+        backBtn.addEventListener("click", ()=>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft -= window.innerWidth;
+        });
+    </script>
 </body>
 </html>
