@@ -7,7 +7,150 @@
 </head>
 <link rel="stylesheet" href="hogmerch.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         
+        .top {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            font-size: 80px;
+            font-weight: 900;
+            background-color: grey;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            color: white; 
+            font-family: 'Lobster', cursive; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+        }
+
+        
+        .bar {
+            display: grid;
+            grid-template-columns: repeat(3, 120px);
+            height: 30px;
+            width: 100%;
+            background-color: lightgrey;
+            position: fixed;
+            top: 100px;
+            left: 0;
+            z-index: 99;
+        }
+
+        body {
+            margin-top: 130px;
+            background-color: antiquewhite;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        .sak {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .sak:hover {
+            background-color: darkgrey;
+        }
+
+        
+        .image img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            display: block;
+        }
+
+       
+        .items-container {
+            display: flex;
+            justify-content: space-around; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+            margin: 20px auto;
+        }
+
+        .items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .items:hover {
+            transform: scale(1.05);
+        }
+
+        
+        .itemimage img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: opacity 0.3s ease;
+        }
+
+        .items:hover img {
+            opacity: 0.9;
+        }
+
+        
+        .item-des h2 {
+            font-size: 24px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .item-des p {
+            font-size: 16px;
+            color: #666;
+            padding: 10px;
+        }
+
+        .pris1 {
+            font-size: 22px;
+            font-weight: bold;
+            color: #b12704;
+            margin-top: 10px;
+        }
+
+       
+        .add-to-kart {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: #ff6600;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .add-to-kart:hover {
+            background-color: #cc5200;
+        }
     </style>
     
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -16,7 +159,7 @@
 
     
     <div class="top">
-        <div class="image"><img src="/images/logotyp.webp" alt="Wildhog"></div>
+        <div class="image"><img src="/images/logotyp.webp" alt=""></div>
         Wildhogs
     </div>
 
@@ -35,9 +178,9 @@
                 <img src="images/pan.webp" alt="Stekpanna">
             </div>
             <div class="item-des">
-                <h2>Stekpanna</h2>
-                <p>Wildhog-stekpannan är en robust gjutjärnspanna, perfekt för både kök och vildmark. Den ger jämn värme, har ett ergonomiskt trähandtag och en naturlig non-stick-yta som blir bättre med tiden.</p>
-                <div class="pris1">900 SEK</div>
+                <h2>Wildhog-panna</h2>
+                <p>Wildhog-stekpannan är en robust gjutjärnspanna, perfekt för både kök och vildmark. Den ger jämn värme, har ett ergonomiskt gummihandtag för bra grepp och en naturlig non-stick-yta som blir bättre med tiden.</p>
+                <div class="pris1">899 SEK</div>
                 <a href="#" class="add-to-kart">Lägg i varukorg</a>
             </div>
         </div>
@@ -48,9 +191,9 @@
                 <img src="images/knife.webp" alt="Kökkniv">
             </div>
             <div class="item-des">
-                <h2>Kökkniv</h2>
-                <p>Wildhog-kökkniven är en precisionskniv med en skarp och hållbar blad som är perfekt för att hacka, skiva och skära alla dina matvaror. Ergonomiskt handtag för bästa grepp och kontroll. En oumbärlig del av ditt köksverktyg!</p>
-                <div class="pris1">500 SEK</div>
+                <h2>Wildhog-kniv</h2>
+                <p>Wildhog-kniven är en precisionskniv med en skarp och hållbar blad som är perfekt för att hacka, skiva och skära alla dina matvaror, speciellt vildssvin. Ergonomiskt handtag för bästa grepp och kontroll. En oumbärlig del av ditt köksverktyg!</p>
+                <div class="pris1">650 SEK </div>
                 <a href="#" class="add-to-kart">Lägg i varukorg</a>
             </div>
         </div>
@@ -61,13 +204,13 @@
                 <img src="images/merchsmoker.webp" alt="Grill">
             </div>
             <div class="item-des">
-                <h2>Grill</h2>
-                <p>Wildhog-grillen är en kraftfull och hållbar grill som gör dina måltider perfekt grillade. Oavsett om du är på en campingresa eller hemma i trädgården, ger denna grill dig den bästa matlagningen med en smakrik rökig finish.</p>
-                <div class="pris1">1500 SEK</div>
+                <h2>Wildhog-rök</h2>
+                <p>Wildhog-röken är en kraftfull och hållbar rök som gör dina måltider perfekt rökta. Oavsett om du är på en campingresa eller hemma i trädgården, ger denna rök dig den bästa matlagningen med en kraftful och rökig finish, gjord av miljövänligt stål.</p>
+                <div class="pris1">4499 SEK</div>
                 <a href="#" class="add-to-kart">Lägg i varukorg</a>
             </div>
         </div>
     </div>
-
+    <div class="footer">Wildhogs</div>
 </body>
 </html>
