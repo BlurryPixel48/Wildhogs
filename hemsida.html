@@ -5,115 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<link rel="stylesheet" href="hemsida.css">
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-            margin-top: 130px;
-            background-color: antiquewhite;
-            font-family: Arial, sans-serif;
-        }
-
-    .top {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 100px;
-            font-size: 80px;
-            font-weight: 900;
-            background-color: grey;
-            padding: 10px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 100;
-            color: white; 
-            font-family: 'Lobster', cursive; 
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-        }
-
-    .image img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    display: block;
-}
-
-
-    
-    .images {
-        width: 100vw;
-        height: 85vh;
-        overflow-x: auto;
-        overflow-y: hidden;
-        display: flex;
-        scroll-snap-type: x mandatory; 
-        scroll-behavior: smooth;
-        background-color: #f5f5f5;
-        white-space: nowrap;
-        scrollbar-width: none;
-    
-    }
-
-    .image1 {
-        flex: 0 0 100vw; 
-        scroll-snap-align: start; 
-    }
-
-    .image1 img {
-        width: 100vw;
-        height: 85vh;
-        object-fit: fill; 
-    }
-
-    .bar {
-            display: grid;
-            grid-template-columns: repeat(3, 120px);
-            height: 30px;
-            width: 100%;
-            background-color: lightgrey;
-            position: fixed;
-            top: 100px;
-            left: 0;
-            z-index: 99;
-        }
-    .sak {
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    text-decoration: none; 
-    color: black;
-    }
-
-    .sak:hover {
-        background-color: darkgrey;
-    }
-    
-
-    .slidebutton{
-        display: flex;
-        align-items: center;
-        justify-content: center;    
-    }
-
-    #backbtn, #nextbtn{
-        width: 50px;
-        cursor: pointer;
-        margin: 40px;
-        filter:grayscale(0);
-        transform: scale(1.1);
-    }
-
     
 
     
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-</head>
+
     <body>
     <div class="top">
         <div class="image"><img src="/images/logotyp.webp" alt="Wildhog"></div> Wildhogs
